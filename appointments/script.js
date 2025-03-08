@@ -1,12 +1,13 @@
 // Firebase configuration
 const firebaseConfig = {
-    apiKey: "AIzaSyA1FdUSVK7LLX50iDdQBLRfczAS3_gXSAs",
-    authDomain: "cruduser-1bde1.firebaseapp.com",
-    projectId: "cruduser-1bde1",
-    storageBucket: "cruduser-1bde1.firebasestorage.app",
-    messagingSenderId: "692323390500",
-    appId: "1:692323390500:web:4201733b2baeec435674b1"
-};
+    apiKey: "AIzaSyDbS-1FULvtPhOKsQBfLcamsQDUmMyfyOo",
+    authDomain: "pet-haven-fb90f.firebaseapp.com",
+    databaseURL: "https://pet-haven-fb90f-default-rtdb.asia-southeast1.firebasedatabase.app",
+    projectId: "pet-haven-fb90f",
+    storageBucket: "pet-haven-fb90f.firebasestorage.app",
+    messagingSenderId: "910697102356",
+    appId: "1:910697102356:web:b980f8219ab73019c0fb01"
+  };
 
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
