@@ -1,0 +1,100 @@
+/* Reset mặc định */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #121212; /* Màu nền tối */
+    color: #e0e0e0; /* Màu chữ sáng */
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Canh giữa nội dung */
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    background: #1e1e1e; /* Nền container tối */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.6);
+    width: 80%;
+    text-align: center;
+}
+
+h1 {
+    color: #f5f5f5; /* Màu tiêu đề sáng */
+    margin-bottom: 20px;
+}
+
+button {
+    padding: 10px 20px;
+    border: none;
+    background: #bec624; /* Màu nền button */
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+button:hover {
+    background: #3700b3; /* Màu nền khi hover */
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    padding: 10px;
+    border: 1px solid #444444; /* Màu viền nhẹ */
+    text-align: center;
+}
+
+th {
+    background-color: #bec624; /* Màu nền th sáng hơn */
+    color: #f5f5f5;
+}
+
+td {
+    background-color: #1f1f1f; /* Nền ô tối hơn */
+}
+
+/* Modal Form */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Màu nền modal tối */
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background: #121212; /* Nền modal */
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    width: 80%;
+    max-width: 500px;
+}
+
+.close {
+    float: right;
+    font-size: 30px;
+    color: #f5f5f5; /* Màu chữ đóng modal sáng */
+    cursor: pointer;
+}
+
+.close:hover {
+    color: #ff4081; /* Màu sáng khi hover */
+}
