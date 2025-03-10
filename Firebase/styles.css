@@ -1,0 +1,120 @@
+body {
+    background-color: #000000;
+    font-family: Arial, sans-serif;
+    color: #fff;
+}
+
+/* Định dạng phần tiêu đề */
+h2 {
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #ffffff;
+}
+
+/* Căn giữa nội dung container */
+.container {
+    text-align: center;
+    background: rgb(30, 30, 30);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    max-width: 900px;
+    margin: 20px auto;
+}
+
+/* Căn giữa nút "Thêm món ăn" */
+.btn-primary {
+    display: block;
+    margin: 0 auto 20px auto;
+    background-color: #ffbf00;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+/* Định dạng bảng */
+.table {
+    background-color: #222;
+    /* Màu nền của bảng */
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+th,
+td {
+    padding: 12px;
+    color: white;
+    /* Màu chữ trắng */
+    border-right: 1px solid #444444;
+    border-bottom: 1px solid #444444;
+    /* Đường viền giữa các hàng */
+}
+
+th {
+    text-align: center;
+    background-color: rgb(52, 58, 64);
+    /* Màu nền tiêu đề bảng */
+    color: white;
+    text-transform: uppercase;
+}
+
+td {
+    background-color: #2b2b2b;
+    /* Màu nền của các dòng dữ liệu */
+    vertical-align: middle;
+}
+
+/* Căn chỉnh các nút trong cột "Actions" */
+td:last-child {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+/* Định dạng nút */
+.btn-warning,
+.btn-danger {
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.btn-warning {
+    background-color: #ffc107;
+}
+
+.btn-danger {
+    background-color: #dc3545;
+}
+
+.btn:hover {
+    opacity: 0.8;
+}
+
+/* Định dạng modal */
+.modal-content {
+    border-radius: 10px;
+    padding: 20px;
+    background-color: #222;
+    /* Nền màu sáng */
+    color: white;
+    /* Màu chữ đen */
+
+}
+
+/* Định dạng form trong modal */
+.form-group {
+    text-align: left;
+}
+
+.form-control {
+    border-radius: 5px;
+}
