@@ -16,7 +16,8 @@ body {
 .navbar {
     display: flex;
     align-items: center;
-    justify-content: space-between;  /* Đảm bảo căn logo trái & menu phải */
+    justify-content: space-between;
+    /* Đảm bảo căn logo trái & menu phải */
     background-color: #1f1f1f;
     padding: 15px 50px;
     box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
@@ -32,13 +33,15 @@ body {
     font-size: 22px;
     font-weight: bold;
     color: #FF8C00;
-    margin-right: auto;  /* Đẩy logo sang trái */
+    margin-right: auto;
+    /* Đẩy logo sang trái */
 }
 
 /* Danh sách menu bên phải */
 .nav-links {
     display: flex;
-    gap: 20px;  /* Khoảng cách giữa các mục */
+    gap: 20px;
+    /* Khoảng cách giữa các mục */
     list-style: none;
     padding: 0;
     margin: 0;
@@ -56,6 +59,53 @@ body {
     color: #FF8C00;
 }
 
+.user-menu {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.user-name {
+    color: #fff;
+    font-weight: bold;
+    padding: 10px;
+}
+
+/* ✅ Dropdown menu */
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: #222;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
+    overflow: hidden;
+    min-width: 180px;
+}
+
+/* ✅ Mục trong dropdown */
+.dropdown-menu li {
+    list-style: none;
+    border-bottom: 1px solid #444;
+}
+
+.dropdown-menu li:last-child {
+    border-bottom: none;
+}
+
+/* ✅ Link trong dropdown */
+.dropdown-menu li a {
+    display: block;
+    padding: 10px 15px;
+    color: #fff;
+    text-decoration: none;
+    transition: background 0.3s;
+}
+
+.dropdown-menu li a:hover {
+    background-color: #FF8C00;
+}
 
 /* Nút CTA */
 .cta-btn {
@@ -334,7 +384,8 @@ body {
     color: #ddd;
 }
 
-.form-group input, .form-group select {
+.form-group input,
+.form-group select {
     width: 100%;
     padding: 10px;
     border: 1px solid #444;
@@ -345,7 +396,8 @@ body {
     outline: none;
 }
 
-.form-group input:focus, .form-group select:focus {
+.form-group input:focus,
+.form-group select:focus {
     border-color: #FF8C00;
 }
 
@@ -545,12 +597,16 @@ body {
 }
 
 /* Cột trong footer */
-.footer-logo, .footer-links, .footer-contact, .footer-social {
+.footer-logo,
+.footer-links,
+.footer-contact,
+.footer-social {
     flex: 1;
     min-width: 250px;
 }
 
-.footer h2, .footer h3 {
+.footer h2,
+.footer h3 {
     font-size: 22px;
     margin-bottom: 15px;
 }

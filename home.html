@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="vi">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pet Haven</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="home.css">
 </head>
+
 <body>
 
     <nav class="navbar">
@@ -16,7 +18,9 @@
             <li><a href="#">Thức ăn</a></li>
             <li><a href="#">Đặt lịch</a></li>
             <li><a href="#">Liên hệ</a></li>
-            <li><a href="#">Đăng nhập</a></li>
+            <li id="userNav">
+                <a href="login.html">Đăng nhập</a> <!-- Mặc định nếu chưa đăng nhập -->
+            </li>
         </ul>
     </nav>
 
@@ -27,18 +31,20 @@
             <button class="hero-btn">Khám phá ngay</button>
         </div>
         <div class="hero-image">
-            <img src="c" alt="Thú cưng dễ thương">
+            <img src="" alt="Thú cưng dễ thương">
         </div>
     </header>
 
     <section class="about">
         <div class="about-content">s
             <h2>Về Pet Haven 🏡</h2>
-            <p>Pet Haven là nơi mang đến những dịch vụ chăm sóc thú cưng tốt nhất, từ thức ăn chất lượng, spa, đến dịch vụ y tế và tư vấn sức khỏe.</p>
-            <p>Chúng tôi cam kết cung cấp những sản phẩm và dịch vụ tốt nhất để đảm bảo thú cưng của bạn luôn khỏe mạnh và hạnh phúc.</p>
+            <p>Pet Haven là nơi mang đến những dịch vụ chăm sóc thú cưng tốt nhất, từ thức ăn chất lượng, spa, đến dịch
+                vụ y tế và tư vấn sức khỏe.</p>
+            <p>Chúng tôi cam kết cung cấp những sản phẩm và dịch vụ tốt nhất để đảm bảo thú cưng của bạn luôn khỏe mạnh
+                và hạnh phúc.</p>
         </div>
         <div class="about-image">
-            <img src="images/dog.jpg" alt="Giới thiệu về Pet Haven">
+            <img src="images/pet-haven-introduction.jpg" alt="Hình ảnh giới thiệu về trung tâm chăm sóc thú cưng Pet Haven" width="500" height="300">
         </div>
     </section>
 
@@ -172,7 +178,8 @@
             </div>
 
             <div class="faq-item">
-                <button class="faq-question">Cửa hàng có bán thức ăn cho mọi loại thú cưng không? <span>+</span></button>
+                <button class="faq-question">Cửa hàng có bán thức ăn cho mọi loại thú cưng không?
+                    <span>+</span></button>
                 <div class="faq-answer">
                     <p>Chúng tôi cung cấp đa dạng thức ăn cho chó, mèo và một số vật nuôi khác.</p>
                 </div>
@@ -235,12 +242,56 @@
         </div>
 
         <div class="footer-bottom">
-            <p>&copy; 2025 Pet Haven.  All rights reserved.</p>
+            <p>&copy; 2025 Pet Haven. All rights reserved.</p>
         </div>
     </footer>
 
     <script src="https://kit.fontawesome.com/your-fontawesome-kit.js" crossorigin="anonymous"></script>
 
-    <script src="script.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const faqItems = document.querySelectorAll(".faq-item");
+
+            faqItems.forEach(item => {
+                const question = item.querySelector(".faq-question");
+
+                question.addEventListener("click", function () {
+                    item.classList.toggle("active");
+                });
+            });
+        });
+
+        document.addEventListener("DOMContentLoaded", function () {
+            const userNav = document.getElementById("userNav");
+            const userData = JSON.parse(localStorage.getItem("user")); // Lấy thông tin từ localStorage
+
+            if (userData) {
+                // Nếu đã đăng nhập, hiển thị tên user + dropdown menu
+                userNav.innerHTML = `
+            <div class="user-menu">
+                <span onclick="toggleDropdown()" class="user-name">${userData.fullname} </span>
+                <ul id="dropdownMenu" class="dropdown-menu">
+                    <li><a href="profile.html">Thông tin tài khoản</a></li>
+                    <li><a href="#" onclick="logout()">Đăng xuất</a></li>
+                </ul>
+            </div>
+        `;
+            }
+        });
+
+        // Hàm hiển thị/ẩn dropdown menu
+        function toggleDropdown() {
+            const menu = document.getElementById("dropdownMenu");
+            menu.style.display = (menu.style.display === "block") ? "none" : "block";
+        }
+
+        // Hàm đăng xuất
+        function logout() {
+            localStorage.removeItem("user"); // Xóa dữ liệu user
+            window.location.href = "home.html"; // Tải lại trang
+        }
+
+    </script>
 </body>
+
 </html>

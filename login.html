@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đăng nhập - Pet Haven</title>
+
+    <!-- FontAwesome để có icon con mắt -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+    <style>
+        /* Đặt nền tối cho toàn bộ trang */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #121212;
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        /* Hộp chứa form đăng nhập */
+        .login-container {
+            background-color: #1f1f1f;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
+            text-align: center;
+            width: 400px;
+            max-width: 90%;
+        }
+
+        /* Nhóm input */
+        .input-group {
+            width: 100%;
+            margin-bottom: 15px;
+            text-align: left;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+        }
+
+        label {
+            font-size: 14px;
+            margin-bottom: 5px;
+        }
+
+        input {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #444;
+            border-radius: 5px;
+            background-color: #2a2a2a;
+            color: #fff;
+            box-sizing: border-box;
+            font-size: 14px;
+        }
+
+        /* Icon con mắt trong input password */
+        .password-wrapper {
+            position: relative;
+            width: 100%;
+        }
+
+        .password-wrapper input {
+            padding-right: 40px;
+        }
+
+        .toggle-password {
+            position: absolute;
+            top: 50%;
+            right: 10px;
+            transform: translateY(-50%);
+            cursor: pointer;
+            color: #bbb;
+            font-size: 18px;
+            transition: 0.3s;
+        }
+
+        .toggle-password:hover {
+            color: #FF8C00;
+        }
+
+        /* Nút đăng nhập */
+        .login-btn {
+            width: 100%;
+            padding: 12px;
+            background-color: #FF8C00;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            font-weight: bold;
+            color: #fff;
+            cursor: pointer;
+            transition: 0.3s;
+            margin-top: 10px;
+        }
+
+        .login-btn:hover {
+            background-color: #e67e00;
+        }
+
+        /* Liên kết dưới form */
+        .links {
+            margin-top: 15px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .links a {
+            color: #FF8C00;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        .links a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="login-container">
+        <h2>Đăng nhập</h2>
+        <form id="loginForm">
+            <div class="input-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" placeholder="Nhập email của bạn" required>
+            </div>
+            <div class="input-group">
+                <label for="password">Mật khẩu</label>
+                <div class="password-wrapper">
+                    <input type="password" id="password" placeholder="Nhập mật khẩu" required>
+                    <i class="fa-solid fa-eye toggle-password" onclick="togglePassword('password')"></i>
+                </div>
+            </div>
+            <button type="submit" class="login-btn">Đăng nhập</button>
+            <div class="links">
+                <a href="#">Quên mật khẩu?</a>
+                <a href="register.html">Đăng ký tài khoản</a>
+            </div>
+        </form>
+    </div>
+
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js"></script>
+
+    <script type="module">
+        // Cấu hình Firebase
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-app.js";
+        import { getFirestore, collection, query, where, getDocs } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js";
+
+        const firebaseConfig = {
+            apiKey: "AIzaSyDbS-1FULvtPhOKsQBfLcamsQDUmMyfyOo",
+            authDomain: "pet-haven-fb90f.firebaseapp.com",
+            projectId: "pet-haven-fb90f",
+            storageBucket: "pet-haven-fb90f.appspot.com",
+            messagingSenderId: "910697102356",
+            appId: "1:910697102356:web:b980f8219ab73019c0fb01"
+        };
+
+        // Khởi tạo Firebase
+        const app = initializeApp(firebaseConfig);
+        const db = getFirestore(app);
+
+        // Xử lý đăng nhập từ Firestore
+        document.getElementById("loginForm").addEventListener("submit", async function (e) {
+            e.preventDefault(); // Ngăn chặn load lại trang
+
+            const email = document.getElementById("email").value;
+            const password = document.getElementById("password").value;
+
+            try {
+                // Truy vấn Firestore để kiểm tra email & password
+                const usersRef = collection(db, "users");
+                const q = query(usersRef, where("email", "==", email), where("password", "==", password));
+                const querySnapshot = await getDocs(q);
+
+                if (!querySnapshot.empty) {
+                    const userDoc = querySnapshot.docs[0]; // Lấy document đầu tiên
+                    const userData = userDoc.data(); // Lấy dữ liệu của người dùng
+
+                    localStorage.setItem("user", JSON.stringify(userData));
+                    window.location.href = "home.html"; // Chuyển đến trang home.html
+                } else {
+                    alert("Sai email hoặc mật khẩu! Vui lòng thử lại.");
+                }
+            } catch (error) {
+                alert("Lỗi khi đăng nhập: " + error.message);
+            }
+        });
+
+        // Hàm bật/tắt hiển thị mật khẩu
+        window.togglePassword = function (fieldId) {
+            const passwordField = document.getElementById(fieldId);
+            const toggleIcon = passwordField.nextElementSibling;
+
+            if (passwordField.type === "password") {
+                passwordField.type = "text";
+                toggleIcon.classList.remove("fa-eye");
+                toggleIcon.classList.add("fa-eye-slash");
+            } else {
+                passwordField.type = "password";
+                toggleIcon.classList.remove("fa-eye-slash");
+                toggleIcon.classList.add("fa-eye");
+            }
+        };
+    </script>
+</body>
+
+</html>
