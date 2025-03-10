@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản lý Thú Cưng</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Quản lý Thú Cưng</h1>
+        <button id="add-pet-btn" onclick="togglePetForm()">Thêm Thú Cưng</button>
+
+        <table id="pet-table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Age</th>
+                    <th>Species</th>
+                    <th>Description</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Data will be inserted here dynamically -->
+            </tbody>
+        </table>
+
+        <div id="overlay" onclick="togglePetForm()"></div>
+
+        <div id="pet-form-container">
+            <form id="pet-form">
+                <h2 id="form-title">Thêm Thú Cưng</h2>
+                <input type="text" id="petName" placeholder="Tên Thú Cưng" required />
+                <input type="text" id="petAge" placeholder="Tuổi Thú Cưng" required />
+                <input type="text" id="petSpecies" placeholder="Loài" required />
+                <input type="text" id="petDescription" placeholder="Mô tả" required />
+                <input type="text" id="petImage" placeholder="Hình ảnh (URL)" required />
+                <input type="text" id="userId" placeholder="User ID" required />
+                <button type="submit">Lưu</button>
+                <button type="button" onclick="togglePetForm()">Hủy</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

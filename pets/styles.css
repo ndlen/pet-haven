@@ -1,0 +1,186 @@
+/* Cấu hình chung */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Cài đặt chung cho body */
+body {
+    background-color: #121212;  /* Nền tối */
+    color: #fff;
+    text-align: center;
+    font-size: 16px;
+}
+
+/* Container chính */
+.container {
+    width: 80%;
+    max-width: 1200px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #1e1e1e;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+}
+
+/* Tiêu đề */
+h1 {
+    font-size: 24px;
+    color: #fff;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+/* Nút button chung */
+button {
+    padding: 12px 20px;
+    background-color: #FF8C00; /* Màu vàng */
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    margin: 10px;
+    transition: background-color 0.3s ease;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #e07b00;  /* Màu khi hover */
+}
+
+button:focus {
+    outline: none;
+}
+
+/* Bảng */
+table {
+    width: 100%;
+    margin-top: 20px;
+    border-collapse: collapse;
+    margin-bottom: 30px;
+}
+
+th, td {
+    padding: 12px;
+    border: 1px solid #333;
+    text-align: center;
+    font-size: 16px;
+}
+
+th {
+    background-color: #333;
+    color: #fff;
+    font-weight: 600;
+}
+
+td {
+    background-color: #1e1e1e;
+}
+
+tr:nth-child(even) td {
+    background-color: #252525;
+}
+
+/* Form đặt lịch hẹn */
+#pet-form-container {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #222;
+    padding: 30px;
+    border-radius: 10px;
+    z-index: 10;
+    width: 400px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+#overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 5;
+}
+
+/* Các trường nhập liệu */
+input, select {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #444;
+    border-radius: 8px;
+    font-size: 16px;
+    background-color: #333;
+    color: #fff;
+    transition: border-color 0.3s ease;
+}
+
+input[type="date"] {
+    background-color: #444;
+}
+
+input:focus, select:focus {
+    border-color: #FF8C00;  /* Hiệu ứng khi focus vào input/select */
+    outline: none;
+    background-color: #555;  /* Màu nền khi focus */
+}
+
+/* Nút gửi form */
+#pet-form button[type="submit"] {
+    padding: 12px;
+    background-color: #FF8C00; /* Màu vàng */
+    color: white;
+    border: none;
+    border-radius: 8px;
+    width: 94%;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 10px;
+}
+
+#pet-form button[type="submit"]:hover {
+    background-color: #e07b00; /* Màu khi hover */
+}
+
+/* Nút hủy form */
+#pet-form button[type="button"] {
+    background-color: #f44336; /* Màu đỏ */
+    color: white;
+    font-size: 16px;
+    width: 94%;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+    margin-top: 10px;
+}
+
+#pet-form button[type="button"]:hover {
+    background-color: #e53935;
+}
+
+/* Tiêu đề form */
+#form-title {
+    font-size: 20px;
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+/* Hiệu ứng cho overlay và form */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
