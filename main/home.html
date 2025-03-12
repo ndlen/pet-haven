@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pet Haven</title>
+    <link rel="stylesheet" href="./styles/home.css">
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <div class="logo">🐾 Pet Haven</div>
+        <ul class="nav-links">
+            <li><a href="#">Trang chủ</a></li>
+            <li><a href="#">Dịch vụ</a></li>
+            <li><a href="#">Thức ăn</a></li>
+            <li><a href="#">Đặt lịch</a></li>
+            <li><a href="#">Liên hệ</a></li>
+            <li id="userNav">
+                <a href="login.html">Đăng nhập</a> <!-- Mặc định nếu chưa đăng nhập -->
+            </li>
+        </ul>
+    </nav>
+
+    <header class="hero">
+        <div class="hero-content">
+            <h1>Chăm sóc thú cưng <br> với sự tận tâm nhất! 🐾</h1>
+            <p>Hãy để chúng tôi giúp bạn chăm sóc thú cưng với các dịch vụ tốt nhất.</p>
+            <button class="hero-btn">Khám phá ngay</button>
+        </div>
+        <div class="hero-image">
+            <img src="" alt="Thú cưng dễ thương">
+        </div>
+    </header>
+
+    <section class="about">
+        <div class="about-content">s
+            <h2>Về Pet Haven 🏡</h2>
+            <p>Pet Haven là nơi mang đến những dịch vụ chăm sóc thú cưng tốt nhất, từ thức ăn chất lượng, spa, đến dịch
+                vụ y tế và tư vấn sức khỏe.</p>
+            <p>Chúng tôi cam kết cung cấp những sản phẩm và dịch vụ tốt nhất để đảm bảo thú cưng của bạn luôn khỏe mạnh
+                và hạnh phúc.</p>
+        </div>
+        <div class="about-image">
+            <img src="images/pet-haven-introduction.jpg" alt="Hình ảnh giới thiệu về trung tâm chăm sóc thú cưng Pet Haven" width="500" height="300">
+        </div>
+    </section>
+
+    <!-- Phần Dịch vụ nổi bật -->
+    <section class="services">
+        <h2>Dịch vụ nổi bật 🏆</h2>
+        <div class="services-container">
+            <div class="service-card">
+                <img src="spa-icon.png" alt="Spa thú cưng">
+                <h3>Spa & Grooming</h3>
+                <p>Chăm sóc lông, tắm, và cắt tỉa cho thú cưng.</p>
+            </div>
+            <div class="service-card">
+                <img src="medical-icon.png" alt="Dịch vụ y tế">
+                <h3>Thú y</h3>
+                <p>Khám sức khỏe, tiêm phòng và tư vấn y tế.</p>
+            </div>
+            <div class="service-card">
+                <img src="food-icon.png" alt="Thức ăn thú cưng">
+                <h3>Thức ăn thú cưng</h3>
+                <p>Cung cấp thức ăn dinh dưỡng, phù hợp cho từng loại thú cưng.</p>
+            </div>
+            <div class="service-card">
+                <img src="training-icon.png" alt="Huấn luyện thú cưng">
+                <h3>Huấn luyện</h3>
+                <p>Đào tạo thú cưng các kỹ năng cơ bản và nâng cao.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Phần Sản phẩm nổi bật -->
+    <section class="products">
+        <h2>Sản phẩm nổi bật 🛍️</h2>
+        <div class="products-container">
+            <div class="product-card">
+                <img src="dog-food.png" alt="Thức ăn cho chó">
+                <h3>Thức ăn cho chó</h3>
+                <p>Thức ăn giàu dinh dưỡng giúp chó khỏe mạnh.</p>
+                <span class="price">250.000₫</span>
+                <button class="buy-btn">Mua ngay</button>
+            </div>
+            <div class="product-card">
+                <img src="cat-food.png" alt="Thức ăn cho mèo">
+                <h3>Thức ăn cho mèo</h3>
+                <p>Thức ăn ngon miệng với đầy đủ dưỡng chất.</p>
+                <span class="price">220.000₫</span>
+                <button class="buy-btn">Mua ngay</button>
+            </div>
+            <div class="product-card">
+                <img src="pet-bed.png" alt="Giường ngủ thú cưng">
+                <h3>Giường ngủ thú cưng</h3>
+                <p>Thiết kế mềm mại, mang lại giấc ngủ ngon cho thú cưng.</p>
+                <span class="price">500.000₫</span>
+                <button class="buy-btn">Mua ngay</button>
+            </div>
+            <div class="product-card">
+                <img src="pet-toy.png" alt="Đồ chơi thú cưng">
+                <h3>Đồ chơi thú cưng</h3>
+                <p>Giúp thú cưng vận động và phát triển trí tuệ.</p>
+                <span class="price">150.000₫</span>
+                <button class="buy-btn">Mua ngay</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Phần Đặt lịch hẹn nhanh -->
+    <section class="appointment">
+        <h2>Đặt lịch hẹn nhanh 📅</h2>
+        <form id="appointmentForm">
+            <div class="form-group">
+                <label for="name">Họ và tên</label>
+                <input type="text" id="name" placeholder="Nhập họ và tên..." required>
+            </div>
+
+            <div class="form-group">
+                <label for="phone">Số điện thoại</label>
+                <input type="tel" id="phone" placeholder="Nhập số điện thoại..." required>
+            </div>
+
+            <div class="form-group">
+                <label for="date">Chọn ngày</label>
+                <input type="date" id="date" required>
+            </div>
+
+            <div class="form-group">
+                <label for="service">Chọn dịch vụ</label>
+                <select id="service">
+                    <option value="spa">Spa & Grooming</option>
+                    <option value="vet">Khám sức khỏe</option>
+                    <option value="boarding">Trông giữ thú cưng</option>
+                </select>
+            </div>
+
+            <button type="submit" class="submit-btn">Đặt lịch ngay</button>
+        </form>
+    </section>
+
+    <!-- Phần Cảm nhận khách hàng -->
+    <section class="testimonials">
+        <h2>Khách hàng nói gì về chúng tôi? 🐾</h2>
+        <div class="testimonials-container">
+
+            <div class="testimonial">
+                <p>"Dịch vụ chăm sóc thú cưng ở đây thật tuyệt vời! Nhân viên rất thân thiện và chuyên nghiệp!"</p>
+                <h4>- Nguyễn Văn A</h4>
+            </div>
+
+            <div class="testimonial">
+                <p>"Chó cưng của tôi được tắm và cắt tỉa lông rất đẹp, chắc chắn sẽ quay lại!"</p>
+                <h4>- Trần Thị B</h4>
+            </div>
+
+            <div class="testimonial">
+                <p>"Thức ăn và phụ kiện chất lượng cao, giá cả hợp lý, rất đáng để trải nghiệm!"</p>
+                <h4>- Lê Văn C</h4>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Phần Câu hỏi thường gặp -->
+    <section class="faq">
+        <h2>Câu hỏi thường gặp ❓</h2>
+        <div class="faq-container">
+
+            <div class="faq-item">
+                <button class="faq-question">Tôi có thể đặt lịch hẹn trước bao lâu? <span>+</span></button>
+                <div class="faq-answer">
+                    <p>Bạn có thể đặt lịch trước tối đa 1 tháng để đảm bảo có chỗ cho thú cưng.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">Cửa hàng có bán thức ăn cho mọi loại thú cưng không?
+                    <span>+</span></button>
+                <div class="faq-answer">
+                    <p>Chúng tôi cung cấp đa dạng thức ăn cho chó, mèo và một số vật nuôi khác.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">Có dịch vụ giao hàng tận nơi không? <span>+</span></button>
+                <div class="faq-answer">
+                    <p>Chúng tôi hỗ trợ giao hàng tận nơi trong phạm vi 10km từ cửa hàng.</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Phần Kêu Gọi Hành Động -->
+    <section class="cta">
+        <div class="cta-content">
+            <h2>Hãy chăm sóc thú cưng của bạn ngay hôm nay!</h2>
+            <p>Đặt lịch hẹn ngay để thú cưng của bạn được hưởng dịch vụ chăm sóc tốt nhất.</p>
+            <a href="#datlich" class="cta-button">Đặt lịch ngay</a>
+        </div>
+    </section>
+
+    <!-- Phần Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-logo">
+                <h2>🐾 Pet Haven</h2>
+                <p>Chăm sóc thú cưng tận tâm - Dịch vụ chuyên nghiệp.</p>
+            </div>
+
+            <div class="footer-links">
+                <h3>Liên kết nhanh</h3>
+                <ul>
+                    <li><a href="#">Trang chủ</a></li>
+                    <li><a href="#">Dịch vụ</a></li>
+                    <li><a href="#">Sản phẩm</a></li>
+                    <li><a href="#">Liên hệ</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-contact">
+                <h3>Liên hệ</h3>
+                <p>Giám đốc: TRÍ CU TO</p>
+                <p>Email: support@pethaven.com</p>
+                <p>Hotline: 1900 123 456</p>
+                <p>Địa chỉ: 123 Đường ABC, TP. HCM</p>
+            </div>
+
+            <div class="footer-social">
+                <h3>Kết nối với chúng tôi</h3>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2025 Pet Haven. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://kit.fontawesome.com/your-fontawesome-kit.js" crossorigin="anonymous"></script>
+
+    <script src="./script/home.js"></script>
+</body>
+
+</html>

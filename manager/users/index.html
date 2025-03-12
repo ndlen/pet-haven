@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Quản Lý Người Dùng</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+    <link rel="stylesheet" href="../style/nav.css">
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="navbar-brand">Hệ Thống Quản Lý</div>
+        <ul>
+            <li><a href="../appointments/index.html">Lịch Hẹn</a></li>
+            <li><a href="../foods/index.html">Thức Ăn</a></li>
+            <li><a href="../pets/index.html">Thú Cưng</a></li>
+            <li><a href="../services/index.html">Dịch Vụ</a></li>
+            <li><a href="../users/index.html">Người Dùng</a></li>
+        </ul>
+    </nav>
+    <div class="container">
+        <h2>DANH SÁCH NGƯỜI DÙNG</h2>
+        
+        <table id="table-users" class="table">
+            <tr>
+                <th>Email</th>
+                <th>Mật khẩu</th>
+                <th>Số điện thoại</th>
+                <th>Vai trò</th>
+                <th>Hành động</th>
+            </tr>
+        </table>
+    </div>
+
+    <script src="./script.js"></script>
+</body>
+
+</html>

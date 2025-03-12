@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Quản Lý Thức Ăn</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+    <link rel="stylesheet" href="../style/nav.css">
+    <link rel="stylesheet" href="./styles.css">
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="navbar-brand">Hệ Thống Quản Lý</div>
+        <ul>
+            <li><a href="../appointments/index.html">Lịch Hẹn</a></li>
+            <li><a href="../foods/index.html">Thức Ăn</a></li>
+            <li><a href="../pets/index.html">Thú Cưng</a></li>
+            <li><a href="../services/index.html">Dịch Vụ</a></li>
+            <li><a href="../users/index.html">Người Dùng</a></li>
+        </ul>
+    </nav>
+    <div class="container">
+        <h2>DANH SÁCH THỨC ĂN</h2>
+        <button type="button" class="btn btn-primary" id="showAddForm">THÊM THỨC ĂN</button>
+
+        <!-- Modal Form -->
+        <div id="foodModal" class="modal">
+            <div class="modal-content">
+                <h3 id="formTitle">THÊM THỨC ĂN</h3>
+                <form id="foodForm">
+                    <input type="hidden" id="foodId">
+                    <div class="form-group">
+                        <label for="foodName">Tên món ăn</label>
+                        <input type="text" class="form-control" id="foodName" required placeholder="Nhập tên món ăn">
+                    </div>
+                    <div class="form-group">
+                        <label for="foodCategory">Danh mục</label>
+                        <input type="text" class="form-control" id="foodCategory" required placeholder="Nhập danh mục">
+                    </div>
+                    <div class="form-group">
+                        <label for="foodPrice">Giá (VND)</label>
+                        <input type="number" class="form-control" id="foodPrice" required placeholder="Nhập giá">
+                    </div>
+                    <div class="form-group">
+                        <label for="foodStatus">Trạng thái</label>
+                        <select class="form-control" id="foodStatus">
+                            <option value="Còn hàng">Còn hàng</option>
+                            <option value="Hết hàng">Hết hàng</option>
+                        </select>
+                    </div>
+                    <div class="form-buttons">
+                        <button type="submit" class="btn btn-success">Lưu</button>
+                        <button type="button" class="btn btn-secondary" id="cancelForm">Hủy</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <table id="table-foods" class="table">
+            <tr>
+                <th>Tên món ăn</th>
+                <th>Danh mục</th>
+                <th>Giá</th>
+                <th>Trạng thái</th>
+                <th>Hành động</th>
+            </tr>
+        </table>
+    </div>
+
+    <script src="./script.js"></script>
+</body>
+
+</html>

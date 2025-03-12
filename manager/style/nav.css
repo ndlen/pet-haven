@@ -1,0 +1,79 @@
+/* Thanh điều hướng */
+.navbar {
+    background-color: #1e1e1e; /* Ghi đè màu nền */
+    padding: 15px 0; /* Ghi đè padding */
+    width: 100%; /* Đảm bảo chiều rộng đầy đủ */
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    min-height: 50px; /* Đảm bảo chiều cao tối thiểu */
+    margin-bottom: 0; /* Loại bỏ margin mặc định của Bootstrap */
+    border: none; /* Loại bỏ border mặc định của Bootstrap */
+    border-radius: 0; /* Loại bỏ border-radius mặc định của Bootstrap */
+    display: flex; /* Thêm flexbox để căn chỉnh */
+    align-items: center; /* Căn giữa theo chiều dọc */
+}
+
+.navbar-brand {
+    font-size: 1.125rem; /* 18px */
+    font-weight: 600;
+    color: #fff;
+    padding: 0 1rem; /* 16px */
+    white-space: nowrap; /* Ngăn chữ xuống dòng */
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    margin: 0; /* Loại bỏ margin mặc định */
+    flex-grow: 1; /* Cho phép ul mở rộng để đẩy brand sang trái */
+}
+
+.navbar ul li {
+    margin: 0 15px;
+    display: inline-block; /* Đảm bảo hiển thị đúng */
+}
+
+.navbar ul li a {
+    color: #fff;
+    width: 140px; /* Chiều rộng cố định dựa trên liên kết dài nhất */
+    height: 40px;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 500;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    white-space: nowrap;
+    display: inline-block;
+    min-width: 120px; /* Đảm bảo kích thước đồng đều */
+    text-align: center;
+}
+
+.navbar ul li a:hover {
+    background-color: #333;
+    color: #FF8C00;
+}
+
+.navbar ul li a.active {
+    background-color: #FF8C00;
+    color: #fff;
+}
+
+/* Container */
+.container {
+    margin-top: 80px;
+    width: 80%;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px;
+    background-color: #1e1e1e;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+}

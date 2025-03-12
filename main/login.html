@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đăng nhập - Pet Haven</title>
+
+    <!-- FontAwesome để có icon con mắt -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="./styles/login.css">
+</head>
+
+<body>
+    <div class="login-container">
+        <h2>Đăng nhập</h2>
+        <form id="loginForm">
+            <div class="input-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" placeholder="Nhập email của bạn" required>
+            </div>
+            <div class="input-group">
+                <label for="password">Mật khẩu</label>
+                <div class="password-wrapper">
+                    <input type="password" id="password" placeholder="Nhập mật khẩu" required>
+                    <i class="fa-solid fa-eye toggle-password" onclick="togglePassword('password')"></i>
+                </div>
+            </div>
+            <button type="submit" class="login-btn">Đăng nhập</button>
+            <div class="links">
+                <a href="#">Quên mật khẩu?</a>
+                <a href="register.html">Đăng ký tài khoản</a>
+            </div>
+        </form>
+    </div>
+
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js"></script>
+    <script type="module" src="./script/login.js"></script>
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,173 @@
+/* Đặt nền tối cho toàn bộ trang */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #121212;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+/* Hộp chứa form đăng ký */
+.register-container {
+    background-color: #1f1f1f;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 6px 12px rgba(255, 255, 255, 0.15);
+    text-align: center;
+    width: 400px;
+    max-width: 90%;
+}
+
+/* Căn đều tất cả input và select */
+.input-group {
+    width: 100%;
+    margin-bottom: 15px;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+label {
+    font-size: 14px;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input,
+select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #444;
+    border-radius: 6px;
+    background-color: #2a2a2a;
+    color: #fff;
+    box-sizing: border-box;
+    font-size: 14px;
+    outline: none;
+    transition: 0.3s;
+}
+
+input:focus,
+select:focus {
+    border-color: #FF8C00;
+    box-shadow: 0 0 8px rgba(255, 140, 0, 0.5);
+}
+
+/* Nút đăng ký */
+.register-btn {
+    width: 100%;
+    padding: 12px;
+    background-color: #FF8C00;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+    cursor: pointer;
+    transition: 0.3s;
+    margin-top: 10px;
+}
+
+.register-btn:hover {
+    background-color: #e67e00;
+}
+
+/* Liên kết dưới form */
+.links {
+    margin-top: 15px;
+}
+
+.links a {
+    color: #FF8C00;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.links a:hover {
+    text-decoration: underline;
+}
+
+/* Phần con mắt trong input password */
+.password-wrapper {
+    position: relative;
+    width: 100%;
+}
+
+.password-wrapper input {
+    padding-right: 45px;
+    /* Chừa khoảng trống cho icon */
+}
+
+.toggle-password {
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #bbb;
+    font-size: 18px;
+    transition: 0.3s;
+}
+
+.toggle-password:hover {
+    color: #FF8C00;
+}
+
+/* Tạo style tùy chỉnh cho select */
+select {
+    appearance: none;
+    /* Ẩn icon mặc định của trình duyệt */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    padding-right: 30px;
+    /* Để chừa khoảng trống cho icon */
+    background-color: #2a2a2a;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='%23ffffff'%3E%3Cpath fill-rule='evenodd' d='M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z' clip-rule='evenodd'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 14px center;
+    /* Dịch icon sang trái 2px */
+    background-size: 16px;
+    border: 1px solid #444;
+    border-radius: 6px;
+    color: #fff;
+    font-size: 14px;
+    width: 100%;
+    padding: 12px;
+    box-sizing: border-box;
+    outline: none;
+    transition: 0.3s;
+    font-size: 15px;
+}
+
+/* Khi select được focus */
+select:focus {
+    border-color: #FF8C00;
+    box-shadow: 0 0 8px rgba(255, 140, 0, 0.5);
+}
+
+/* Chỉnh màu icon lịch trong input date */
+input[type="date"] {
+    color: #fff;
+    /* Màu chữ trắng */
+    background-color: #2a2a2a;
+    /* Màu nền tối */
+    border: 1px solid #444;
+    padding: 12px;
+    border-radius: 6px;
+    font-size: 14px;
+    outline: none;
+    font-size: 15px;
+}
+
+/* Chỉnh màu icon lịch */
+input[type="date"]::-webkit-calendar-picker-indicator {
+    filter: invert(1);
+    /* Đảo màu icon */
+    cursor: pointer;
+    /* Cho phép click */
+}

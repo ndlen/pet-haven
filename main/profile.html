@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thông tin cá nhân - Pet Haven</title>
+
+    <!-- FontAwesome để có icon con mắt -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+    <link rel="stylesheet" href="./styles/profile.css">
+</head>
+
+<body>
+    <div class="profile-container">
+        <h2>Thông tin cá nhân</h2>
+        <form id="profileForm">
+            <div class="input-group">
+                <label for="fullname">Họ và tên</label>
+                <input type="text" id="fullname" placeholder="Nhập họ và tên" required style="width: 375px;">
+            </div>
+            <div class="input-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" disabled style="width: 375px;">
+            </div>
+            <div class="input-group">
+                <label for="phone">Số điện thoại</label>
+                <input type="tel" id="phone" placeholder="Nhập số điện thoại" style="width: 375px;">
+            </div>
+            <div class="input-group date-group">
+                <div>
+                    <label for="day">Ngày</label>
+                    <select id="day" required>
+                        <option value="" disabled selected>Ngày</option>
+                        <script>
+                            for (let i = 1; i <= 31; i++) {
+                                const option = document.createElement("option");
+                                option.value = i;
+                                option.textContent = i;
+                                document.getElementById("day").appendChild(option);
+                            }
+                        </script>
+                    </select>
+                </div>
+                <div>
+                    <label for="month">Tháng</label>
+                    <select id="month" required>
+                        <option value="" disabled selected>Tháng</option>
+                        <option value="1">Tháng 1</option>
+                        <option value="2">Tháng 2</option>
+                        <option value="3">Tháng 3</option>
+                        <option value="4">Tháng 4</option>
+                        <option value="5">Tháng 5</option>
+                        <option value="6">Tháng 6</option>
+                        <option value="7">Tháng 7</option>
+                        <option value="8">Tháng 8</option>
+                        <option value="9">Tháng 9</option>
+                        <option value="10">Tháng 10</option>
+                        <option value="11">Tháng 11</option>
+                        <option value="12">Tháng 12</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="year">Năm</label>
+                    <select id="year" required>
+                        <option value="" disabled selected>Năm</option>
+                        <script>
+                            const currentYear = new Date().getFullYear();
+                            for (let i = currentYear; i >= 1900; i--) {
+                                const option = document.createElement("option");
+                                option.value = i;
+                                option.textContent = i;
+                                document.getElementById("year").appendChild(option);
+                            }
+                        </script>
+                    </select>
+                </div>
+            </div>
+
+            <div class="input-group">
+                <label for="gender">Giới tính</label>
+                <select id="gender">
+                    <option value="" disabled selected>Giới tính</option>
+                    <option value="male">Nam</option>
+                    <option value="female">Nữ</option>
+                    <option value="other">Khác</option>
+                </select>
+            </div>
+
+            <div class="input-group">
+                <label for="password">Mật khẩu mới</label>
+                <div class="password-wrapper">
+                    <input type="password" id="password" placeholder="Nhập mật khẩu mới" style="width: 345px;">
+                    <i class="fa-solid fa-eye toggle-password" onclick="togglePassword('password')"></i>
+                </div>
+            </div>
+            <div class="input-group">
+                <label for="confirm-password">Xác nhận mật khẩu</label>
+                <div class="password-wrapper">
+                    <input type="password" id="confirm-password" placeholder="Xác nhận mật khẩu mới" style="width: 345px;">
+                    <i class="fa-solid fa-eye toggle-password" onclick="togglePassword('confirm-password')"></i>
+                </div>
+            </div>
+            <button type="submit" class="save-btn">Lưu thay đổi</button>
+        </form>
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+
+    <script src="./script/profile.js"></script>
+</body>
+
+</html>
