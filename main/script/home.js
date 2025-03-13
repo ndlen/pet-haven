@@ -37,5 +37,5 @@ function toggleDropdown() {
 // Hàm đăng xuất
 function logout() {
     localStorage.removeItem("user"); // Xóa dữ liệu user
-    window.location.href = "./home.html"; // Tải lại trang
+    window.location.href = "home.html"; // Tải lại trang
 }
