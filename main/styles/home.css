@@ -27,7 +27,6 @@ body {
     left: 0;
     z-index: 1000;
 }
-
 /* Logo bên trái */
 .logo {
     font-size: 22px;
@@ -58,6 +57,9 @@ body {
 .nav-links li a:hover {
     color: #FF8C00;
 }
+.dropdown-menu li a:hover{
+    color: #ddd;
+}
 
 .user-menu {
     position: relative;
@@ -75,13 +77,13 @@ body {
 .dropdown-menu {
     display: none;
     position: absolute;
-    top: 100%;
-    right: 0;
+    top: 233%;
+    right: -34px;
     background-color: #222;
     border-radius: 5px;
     box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
     overflow: hidden;
-    min-width: 180px;
+    min-width: 200px;
 }
 
 /* ✅ Mục trong dropdown */
@@ -176,6 +178,7 @@ body {
     width: 400px;
     border-radius: 20px;
     box-shadow: 0 8px 16px rgba(255, 255, 255, 0.2);
+    margin-left: 40px;
 }
 
 /* Phần Giới thiệu */
@@ -660,4 +663,8 @@ body {
     border-top: 1px solid #444;
     font-size: 14px;
     color: #bbb;
+}
+
+.services-container h3{
+    padding-top: 20px;
 }

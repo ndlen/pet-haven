@@ -6,12 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pet Haven</title>
     <link rel="stylesheet" href="./styles/home.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 
 <body>
 
     <nav class="navbar">
-        <div class="logo">🐾 Pet Haven</div>
+        <a style="text-decoration: none" href="./home.html"><div class="logo">🐾 Pet Haven</div></a>
         <ul class="nav-links">
             <li><a href="#">Trang chủ</a></li>
             <li><a href="#">Dịch vụ</a></li>
@@ -19,7 +20,7 @@
             <li><a href="#">Đặt lịch</a></li>
             <li><a href="#">Liên hệ</a></li>
             <li id="userNav">
-                <a href="login.html">Đăng nhập</a> <!-- Mặc định nếu chưa đăng nhập -->
+                <a class="colorcss" href="login.html">Đăng nhập</a> <!-- Mặc định nếu chưa đăng nhập -->
             </li>
         </ul>
     </nav>
@@ -31,7 +32,7 @@
             <button class="hero-btn">Khám phá ngay</button>
         </div>
         <div class="hero-image">
-            <img src="" alt="Thú cưng dễ thương">
+            <img src="./img/background.jpg" alt="Thú cưng dễ thương">
         </div>
     </header>
 
@@ -44,7 +45,7 @@
                 và hạnh phúc.</p>
         </div>
         <div class="about-image">
-            <img src="images/pet-haven-introduction.jpg" alt="Hình ảnh giới thiệu về trung tâm chăm sóc thú cưng Pet Haven" width="500" height="300">
+            <img src="./img/haven.jpg" alt="Hình ảnh giới thiệu về trung tâm chăm sóc thú cưng Pet Haven" width="500" height="300">
         </div>
     </section>
 
@@ -53,22 +54,22 @@
         <h2>Dịch vụ nổi bật 🏆</h2>
         <div class="services-container">
             <div class="service-card">
-                <img src="spa-icon.png" alt="Spa thú cưng">
+                <i class="fa-solid fa-paw"></i>
                 <h3>Spa & Grooming</h3>
                 <p>Chăm sóc lông, tắm, và cắt tỉa cho thú cưng.</p>
             </div>
             <div class="service-card">
-                <img src="medical-icon.png" alt="Dịch vụ y tế">
+                <i class="fa-solid fa-suitcase-medical"></i>
                 <h3>Thú y</h3>
                 <p>Khám sức khỏe, tiêm phòng và tư vấn y tế.</p>
             </div>
             <div class="service-card">
-                <img src="food-icon.png" alt="Thức ăn thú cưng">
+                <i class="fa-solid fa-utensils"></i>
                 <h3>Thức ăn thú cưng</h3>
                 <p>Cung cấp thức ăn dinh dưỡng, phù hợp cho từng loại thú cưng.</p>
             </div>
             <div class="service-card">
-                <img src="training-icon.png" alt="Huấn luyện thú cưng">
+                <i class="fa-solid fa-shield-dog"></i>
                 <h3>Huấn luyện</h3>
                 <p>Đào tạo thú cưng các kỹ năng cơ bản và nâng cao.</p>
             </div>
