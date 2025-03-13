@@ -22,6 +22,7 @@ function fetchFoods() {
             <th>Tên món ăn</th>
             <th>Danh mục</th>
             <th>Giá</th>
+            <th>Hình ảnh</th> <!-- Thêm cột Hình ảnh vào tiêu đề -->
             <th>Trạng thái</th>
             <th>Hành động</th>
         </tr>`;
@@ -60,7 +61,8 @@ foodForm.addEventListener('submit', (e) => {
         name: document.getElementById('foodName').value,
         category: document.getElementById('foodCategory').value,
         price: Number(document.getElementById('foodPrice').value),
-        status: document.getElementById('foodStatus').value
+        status: document.getElementById('foodStatus').value,
+        picture: document.getElementById('foodPicture').value // Lưu ảnh vào Firestore
     };
 
     if (isEditing) {
@@ -84,7 +86,8 @@ function renderFood(doc) {
     row.innerHTML = `
         <td>${doc.data().name}</td>
         <td>${doc.data().category}</td>
-        <td>${doc.data().price}</td>
+        <td>${doc.data().price} VND</td>
+        <td><img src="${doc.data().picture}" alt="Ảnh món ăn" class="food-img"></td> <!-- Hình ảnh sau cột Giá -->
         <td>${doc.data().status}</td>
         <td>
             <button class="btn btn-warning btn-sm btn-edit">Sửa</button>
@@ -92,7 +95,7 @@ function renderFood(doc) {
         </td>
     `;
 
-    // Sự kiện sửa
+    // Sửa dữ liệu
     row.querySelector('.btn-edit').addEventListener('click', () => {
         isEditing = true;
         formTitle.innerText = "SỬA THỨC ĂN";
@@ -101,10 +104,11 @@ function renderFood(doc) {
         document.getElementById('foodCategory').value = doc.data().category;
         document.getElementById('foodPrice').value = doc.data().price;
         document.getElementById('foodStatus').value = doc.data().status;
+        document.getElementById('foodPicture').value = doc.data().picture; // Hiển thị ảnh trong form
         foodModal.style.display = "flex";
     });
 
-    // Sự kiện xóa
+    // Xóa dữ liệu
     row.querySelector('.btn-del').addEventListener('click', () => {
         db.collection('foods').doc(doc.id).delete().then(() => {
             fetchFoods();

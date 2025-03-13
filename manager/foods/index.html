@@ -45,6 +45,10 @@
                         <input type="number" class="form-control" id="foodPrice" required placeholder="Nhập giá">
                     </div>
                     <div class="form-group">
+                        <label for="foodPicture">Hình ảnh (URL)</label>
+                        <input type="text" class="form-control" id="foodPicture" required placeholder="Nhập URL hình ảnh">
+                    </div>
+                    <div class="form-group">
                         <label for="foodStatus">Trạng thái</label>
                         <select class="form-control" id="foodStatus">
                             <option value="Còn hàng">Còn hàng</option>
@@ -64,10 +68,12 @@
                 <th>Tên món ăn</th>
                 <th>Danh mục</th>
                 <th>Giá</th>
+                <th>Hình ảnh</th> <!-- Chuyển cột Hình ảnh xuống sau cột Giá -->
                 <th>Trạng thái</th>
                 <th>Hành động</th>
             </tr>
         </table>
+        
     </div>
 
     <script src="./script.js"></script>

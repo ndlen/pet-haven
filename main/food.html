@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thức Ăn - Pet Haven</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="./styles/customer-food.css">
+</head>
+<body>
+    <nav class="navbar">
+        <a href="./home.html" class="logo">🐾 Pet Haven</a>
+        <ul class="nav-links">
+            <li><a href="./home.html">Trang chủ</a></li>
+            <li><a href="./customer-services.html">Dịch vụ</a></li>
+            <li><a href="./food.html" class="active">Thức ăn</a></li>
+            <li><a href="./appointment.html">Đặt lịch</a></li>
+            <li><a href="./contact.html">Liên hệ</a></li>
+            <li><a href="./login.html">Đăng nhập</a></li>
+        </ul>
+    </nav>
+
+    <header class="hero">
+        <h1>Thức ăn cho thú cưng 🍖🥫</h1>
+        <p>Dinh dưỡng tốt nhất cho người bạn nhỏ của bạn!</p>
+    </header>
+
+    <section class="food-container" id="food-list">
+        <!-- Dữ liệu thức ăn sẽ được load tại đây -->
+    </section>
+
+    <footer class="footer">
+        <p>&copy; 2025 Pet Haven. All rights reserved.</p>
+    </footer>
+
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+    <script src="./script/customer-food.js"></script>
+</body>
+</html>
